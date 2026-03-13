@@ -2,9 +2,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import ConfusionMatrixDisplay, RocCurveDisplay
 
-def plot_histogram(df, col):
+def plot_histogram(df, col, user_value=None):
     fig, ax = plt.subplots()
     sns.histplot(df[col], kde=True, ax=ax)
+    if user_value is not None:
+        ax.axvline(user_value, linestyle="--")
     ax.set_title(f"Distribution de {col}")
     return fig
 

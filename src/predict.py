@@ -1,5 +1,4 @@
 import joblib
-import numpy as np
 import pandas as pd
 
 model = joblib.load("model/medipredict_model.pkl")
@@ -7,8 +6,14 @@ scaler = joblib.load("model/scaler.pkl")
 imputer = joblib.load("model/imputer.pkl")
 
 FEATURES = [
-    "Pregnancies", "Glucose", "BloodPressure", "SkinThickness",
-    "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
 ]
 
 def prepare_input(data_dict):
